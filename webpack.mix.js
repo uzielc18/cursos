@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const {postCss} = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -12,16 +11,11 @@ const {postCss} = require("laravel-mix");
  |
  */
 
-mix.js('resources/js/app.js', 'js')
-    .sass('resources/scss/app.scss', 'css')
-    .setPublicPath('public')
-    .options({
-        postCss:[
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
-        ],
-    })
-    .copyDirectory('resources/images','public/image');
+    ]);
 
 if (mix.inProduction()) {
     mix.version();
