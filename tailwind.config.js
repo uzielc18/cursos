@@ -23,20 +23,30 @@ module.exports = {
                 DEFAULT: "#e5e5e5"
             }),
             colors:{
-
-                'paprika': {
-                    '50': '#f9f3f5',
-                    '100': '#f4e7eb',
-                    '200': '#e3c4cd',
-                    '300': '#d3a0ae',
-                    '400': '#b15872',
-                    '500': '#901135',
-                    '600': '#820f30',
-                    '700': '#6c0d28',
-                    '800': '#560a20',
-                    '900': '#47081a'
+                supernova: {
+                    '50': '#fffcf2',
+                    '100': '#fffae6',
+                    '200': '#fff2bf',
+                    '300': '#ffeb99',
+                    '400': '#ffdb4d',
+                    '500': '#ffcc00',
+                    '600': '#e6b800',
+                    '700': '#bf9900',
+                    '800': '#997a00',
+                    '900': '#7d6400'
                 },
-
+                siren: {
+                    '50': '#f8f3f5',
+                    '100': '#f2e7eb',
+                    '200': '#dec3cd',
+                    '300': '#ca9faf',
+                    '400': '#a35874',
+                    '500': '#7b1038',
+                    '600': '#6f0e32',
+                    '700': '#5c0c2a',
+                    '800': '#4a0a22',
+                    '900': '#3c081b'
+                }
 
             },
             fontFamily: {
@@ -62,15 +72,19 @@ module.exports = {
         },
     },
 
-    variant: {
+    variants: {
         extend: {
-            opacity:['disabled'],
-            zIndex:['responsive','hover'],
-            position:['responsive','hover'],
-            padding:['responsive','last'],
-            margin:['responsive','last'],
-        }
+            opacity: ['disabled'],
+            zIndex: ['responsive','hover'],
+            position: ['responsive','hover'],
+            padding: ['responsive','last'],
+            margin: ['responsive','last'],
+        },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        require('@tailwindcss/aspect-ratio'),
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography')
+    ],
 };
